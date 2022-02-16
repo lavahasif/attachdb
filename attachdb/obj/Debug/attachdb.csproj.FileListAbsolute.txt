@@ -1,0 +1,12 @@
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\bin\Debug\attachdb.exe
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\bin\Debug\attachdb.pdb
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\bin\Debug\stdole.dll
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\obj\Debug\attachdb.csproj.AssemblyReference.cache
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\obj\Debug\attachdb.csproj.CoreCompileInputs.cache
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\obj\Debug\attachdb.csproj.CopyComplete
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\obj\Debug\attachdb.exe
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\obj\Debug\attachdb.pdb
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\obj\Debug\attachdb.Properties.Resources.resources
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\obj\Debug\attachdb.csproj.GenerateResource.cache
+C:\Users\Hasif\RiderProjects\attachdb\attachdb\obj\Debug\attachdb.g.resources
