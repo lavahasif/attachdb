@@ -57,7 +57,7 @@
     <Content Include="h.json" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bin\Debug\excel.xlsx" />
+    <None Include="bin\Debug\excel.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

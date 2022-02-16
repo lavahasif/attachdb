@@ -78,6 +78,63 @@ namespace attachdb.repository
 
             return data;
         }
+
+        public void BackUpDB(string name, string fname)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(connectionString.Connections))
+                {
+                    cn.Open();
+                    string cmd = $"BACKUP DATABASE [{name}] TO DISK='" + fname + @"\" + name + ".bak" + "'";
+                    using (var command = new SqlCommand(cmd, cn))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        public void Restore(string Database, string Filepath)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString.Connections))
+                {
+                    con.Open();
+                    var query = "IF EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = N'" +
+                                Database.Replace(".bak", "") + "') DROP DATABASE " + Database.Replace(".bak", "") +
+                                " RESTORE DATABASE " + Database.Replace(".bak", "") + " FROM DISK = '" + Filepath +
+                                @"\" + Database + "'";
+                    var command = new SqlCommand(query);
+                    command.Connection = con;
+                    command.ExecuteNonQuery();
+                    // SqlCommand cmd1 =
+                    //     new SqlCommand(
+                    //         "ALTER DATABASE [" + Database.Replace(@".bak", "") +
+                    //         "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE ", con);
+                    //
+                    // cmd1.ExecuteNonQuery();
+                    // SqlCommand cmd2 =
+                    //     new SqlCommand(
+                    //         "USE MASTER RESTORE DATABASE [" + Database.Replace(@".bak", "") + "] FROM DISK='" +
+                    //         Filepath + "\\" + Database + "' WITH REPLACE",
+                    //         con);
+                    // cmd2.ExecuteNonQuery();
+                    // SqlCommand cmd3 =
+                    //     new SqlCommand("ALTER DATABASE [" + Database.Replace(@".bak", "") + "] SET MULTI_USER", con);
+                    // cmd3.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }
 
